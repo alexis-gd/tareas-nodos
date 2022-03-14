@@ -72,3 +72,7 @@ body {
 .btn-danger {
     padding: 0 0.6rem;
 }
+
+.texto-esp {
+    overflow: hidden;
+}

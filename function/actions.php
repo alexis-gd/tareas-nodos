@@ -45,7 +45,7 @@ function getDatos(){
       while($fila = mysqli_fetch_array($res_select)){
         $tablas .= '<div class="row content">
                     <div class="col">'.$fila['id_tarea'].'</div>
-                    <div class="col-md-6">'.$fila['descripcion'].'</div>
+                    <div class="col-md-6 texto-esp">'.$fila['descripcion'].'</div>
                     <div class="col">';
                   switch ($fila['estado']) {
                     case '0':
