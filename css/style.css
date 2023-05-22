@@ -69,10 +69,24 @@ body {
     cursor: pointer;
 }
 
-.btn-danger {
+.del_tarea, .save_tarea {
     padding: 0 0.6rem;
 }
 
 .texto-esp {
     overflow: hidden;
+}
+
+.input-table {
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+    width: 100%;
+    padding: 0.375rem 0rem;
+}
+
+.div-fecha {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
 }

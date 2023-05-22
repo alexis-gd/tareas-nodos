@@ -1,0 +1,18 @@
+# Permitir el acceso a los archivos CSS, JS, imágenes, etc. en la carpeta "nodosmx"
+RewriteCond %{REQUEST_URI} !^/nodosmx/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /nodosmx/$1 [L]
+
+# Redireccionar la página principal a la carpeta "nodosmx"
+RewriteCond %{HTTP_HOST} ^(www\.)?nodosmx\.com$ [NC]
+RewriteRule ^$ /nodosmx/ [L]
+
+# Forzar el uso de HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_headers.c>
+    # Configurar la directiva Content-Security-Policy para actualizar solicitudes inseguras
+    Header always set Content-Security-Policy "upgrade-insecure-requests;"
+</IfModule>
